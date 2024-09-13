@@ -33,20 +33,15 @@ function main() {
     let score_h = 0 , score_c = 0;
     let round = 0;
 
-    let tmp = "";
     while (round < 5) {
-        tmp = "";
         const h_choice = getHumanChoice();
         const c_choice = getComputerChoice();
         const eval = score(h_choice, c_choice);
-        tmp += h_choice + " " + c_choice + " " + eval;
+        
         if (eval == 1) score_h++;
         if (eval == -1) score_c++;
         round++;
-        console.log(tmp);
     }
-    console.log(score_h);
-    console.log(score_c);
     if (score_h == score_c) console.log("Tie!");
     if (score_h > score_c)  console.log("You win!");
     else console.log("You lose!");
